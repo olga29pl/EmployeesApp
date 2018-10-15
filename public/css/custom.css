@@ -1,0 +1,72 @@
+.container-fluid {
+  margin-top: 50px;
+}
+
+ul.sidebar {
+    z-index: 998;
+    position: fixed;
+    margin-top: 56px;
+}
+
+nav.navbar {
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+}
+
+.sidebar-toggled .container-fluid {
+    padding-left: 15px;
+}
+
+.container-fluid {
+    padding-left: 100px;
+}
+
+.order-1 {
+    -ms-flex-order: 0;
+    order: 0;
+}
+
+li.nav-item.active a{
+  background-color: blueviolet;
+}
+
+.fa-user-circle:before {
+    content: "\f2bd";
+    border: 3px solid #aa4fff;
+    border-radius: 50%;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+}
+.display-4 {
+    padding-bottom: 10px;
+    font-size: 2.5rem;
+    border-bottom: 1px solid #ededed;
+}
+
+@media (min-width: 768px) {
+  .sidebar-toggled .container-fluid {
+      padding-left: 100px;
+  }
+
+  .container-fluid {
+      padding-left: 240px;
+  }
+}
+
+@media (min-width: 576px){
+  .jumbotron {
+      padding: 1rem 0.5rem; 
+  }
+}
+
+#btnSaveSettings{
+  margin-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+div[data-colapsable-wrapper]{
+  margin-bottom: 15px;
+}

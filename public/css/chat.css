@@ -1,0 +1,105 @@
+.new_message_head {
+    background: #f5f3f3 none repeat scroll 0 0;
+    float: left;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 18px 10px;
+    width: 100%;
+}
+
+.message_section {
+    border: 1px solid #dddddd;
+    margin-bottom: 15px;
+}
+
+.chat_area {
+    float: left;
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.chat_area li {
+    padding: 14px 14px 0;
+}
+
+.chat_area li .chat-img1 img {
+    height: 40px;
+    width: 40px;
+}
+
+.chat_area .chat-body1 {
+    margin-left: 50px;
+    margin-top: -40px;
+}
+
+.chat-body1 p {
+    background: #fbf9fa none repeat scroll 0 0;
+    padding: 10px;
+}
+
+.chat_area li:last-child {
+    padding-bottom: 10px;
+}
+
+.message_write {
+    background: #f5f3f3 none repeat scroll 0 0;
+    float: left;
+    padding: 15px;
+    width: 100%;
+}
+
+.message_write textarea.form-control {
+    height: 70px;
+    padding: 10px;
+}
+
+.chat_bottom {
+    float: left;
+    margin-top: 13px;
+    width: 100%;
+}
+
+.chat-time {
+    float: right;
+    margin-top: 0px;
+    font-size: 12px;
+    color: gray;
+}
+
+#videoWrapper,
+#videoWrapper #player{
+    width: 100%;
+}
+
+.message-text{
+    margin-bottom: 0px;
+    overflow: hidden;
+}
+
+.chat_bottom .btn-group-sm>.btn, .btn-sm#sendMessageBtn {
+  padding: .3rem 1.2rem 0rem 1.2rem;
+}
+.chat_bottom .btn-group-sm>.btn, .btn-sm .fas{
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+.img-msg {
+    display: block;
+    max-width: 100%;
+}
+.user-name {
+    margin-top: -5px;
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+    font-size: 14px;
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+.msg-txt {
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}

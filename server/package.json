@@ -1,0 +1,15 @@
+{
+  "name": "server-letters-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server-keys.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server-keys.js"
+  },
+  "author": "Oleh Andrushko",
+  "license": "ISC",
+  "dependencies": {
+    "websocket": "^1.0.28"
+  }
+}

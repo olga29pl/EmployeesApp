@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <title>Employee - Dashboard</title>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Employees">
+    <link rel="apple-touch-icon" href="/img/icons/ios-appicon-57-57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="/img/icons/ios-appicon-76-76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="/img/icons/ios-appicon-114-114.png" sizes="114x114">
+    <link rel="apple-touch-icon" href="/img/icons/ios-appicon-152-152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="/img/icons/ios-appicon-180-180.png" sizes="180x180">
+    <meta name="msapplication-TileImage" content="/img/icons/appicon-144-144.png">
+
+    <!-- LIB -->
+    <link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/lib/datatables/dataTables.bootstrap4.min.css">
+
+    <!-- Custom styles for this template-->
+    <link href="/lib/sb-admin/sb-admin.min.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+  </head>
+
+  <body id="page-top" class="sidebar-toggled">
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+      <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+        <i class="fas fa-bars"></i>
+      </button>
+      <a class="navbar-brand mr-1" href="index.html">Employees</a>
+
+      <!-- Navbar Search -->
+      <div class="d-none d-md-inline-block ml-auto mr-0 mr-md-3 my-2 my-md-0">
+      </div>
+
+      <!-- Navbar -->
+      <ul class="navbar-nav ml-auto ml-md-0">
+       <li class="nav-item dropdown no-arrow mx-1">
+          <a class="nav-link" href="pages/chat.html">
+            <i class="fas fa-envelope fa-fw"></i>
+            <span class="badge badge-danger">7</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-circle fa-fw"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+            <a class="dropdown-item" href="pages/settings.html">Settings</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+          </div>
+        </li>
+      </ul>
+
+    </nav>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <ul class="sidebar navbar-nav toggled">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-home"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pages/employees.html">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Employees</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pages/chat.html">
+            <i class="fas fa-fw fa-comments"></i>
+            <span>Chat</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pages/settings.html">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Settings</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pages/about.html">
+            <i class="fas fa-fw fa-question-circle"></i>
+            <span>About</span></a>
+        </li>
+      </ul>
+
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+          <!-- Breadcrumbs-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <span id="currentUserName"></span>
+            </li>
+
+          </ol>
+          
+          <h1 class="display-4">Employees manager</h1>
+          <b>Stay Connected with Your Team</b>
+
+          <div class="row">
+            <p class="lead col-sm-12">Improve communication across your entire team by allowing and encouraging employees to request and get help on field in real-time through app!</p>
+          </div>
+
+          <div class="row">
+            <div class="col-xl-3 col-sm-6 mb-3">
+              <div class="card text-white bg-warning o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                    <i class="fas fa-fw fa-users"></i>
+                  </div>
+                  <div class="mr-5"><span id="countOfEmployees"></span> Employees Total!</div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="pages/employees.html">
+                  <span class="float-left">View Details</span>
+                  <span class="float-right">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-3">
+              <div class="card text-white bg-primary o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                    <i class="fas fa-fw fa-comments"></i>
+                  </div>
+                  <div class="mr-5">26 New Messages!</div>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                  <span class="float-left">View Details</span>
+                  <span class="float-right">
+                    <i class="fas fa-angle-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Your Website 2018</span>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+      <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIB -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="/lib/datatables/jquery.dataTables.min.js"></script>
+    <script src="/lib/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="/lib/sb-admin/sb-admin.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/js/global.js"></script>
+    <script src="/js/services/db.service.js"></script>
+    <script src="/js/services/http.service.js"></script>
+    <script src="/js/services/user.service.js"></script>
+    <script src="/js/index.js"></script>
+
+  </body>
+</html>
